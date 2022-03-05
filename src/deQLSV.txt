@@ -1,0 +1,12 @@
+Viết chuong trinh quán lý sinh viên. Mỗi đối tượng sinh viên có các thuộc tinh sau: id, name, age,
+ address và gpa (diém trung binh). Yêu câu: tạo ra một menu với các chúrc năng sau:
+/***************************************"/
+1. Add student.
+2. Edit student by id.
+3. Delete student by id.
+4. Sort student by gpa.
+5. Sort student by name.
+6. Show student.
+7. Lưu thông tin sv vào file student.obj
+8. Doc thông tin sv tür file student.obj và hiến thị ra màn hinh
+0.Exit.
