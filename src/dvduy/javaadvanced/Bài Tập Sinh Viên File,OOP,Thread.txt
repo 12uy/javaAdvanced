@@ -1,0 +1,79 @@
+A.           Tạo Class Student .
+
+a.    Có trường thuộc tính: String studRollNo.
+
+b.    Xây dựng các phương thức get/set cho thuộc tính và hàm tạo có tham số để truyền giá trị cho thuộc tính trên
+
+B.           Tạo ứng dụng đa luồng sử dụng cơ chế wait–notify làm công việc sau:
+
+
+-      Thread1 :
+
+o   Sử dụng BufferedReader để mở file “students.txt”
+
+§  File “students.txt” lưu trữ roll number của các sinh viên, mỗi roll Trên 1 dòng.
+
+§  Roll number hợp lệ có mẫu như sau:
+
+·         abbbbdebbbb
+
+·         Trong đó
+
+o   a là khóa học, có giá trị hoặc là: ‘C’, ‘T’, ‘N’
+
+o   b là số trong khoảng 0-9
+
+o   d là giờ học của lớp, có giá trị hoặc là: ‘G’, ‘H’ , ‘I’, ‘K’, ‘L’, ‘M’
+
+o   e là kiểu lớp học. e có thể không có giá trị hoặc chỉ có 1 giá trị là ‘V’
+
+·         Ví dụ:
+
+o   C1009H0001 là hợp lệ
+
+o   T0812KV0002 là hợp lệ
+
+o   TT0812KV0002 là không hợp lệ
+
+o   C1009H00012 là không hợp lệ
+
+o   C10030003 là không hợp lệ
+
+o   C1103T004 là không hợp lệ
+
+o   G1103T004 là không hợp lệ
+
+§  Một roll hợp lệ được dùng để tạo ra 1 đối tượng sinh viên (sử dụng hàm tạo có tham số) và sau đó được add vào 1 collection tên là validRollNumber sử dụng generic là kiểu Student , Sau đó chuyển công việc qua Thread2.
+
+§  Một roll không hợp lệ được add liên tiếp vào 1 collection tên là unvalidRollNumber có kiểu generic là String, Sau đó chuyển công việc qua Thread3.
+
+§  validRollNumber và unvalidRollNumber collection được khai báo trong Class SharedData được sử dụng trong ứng dụng đa luồng cho phép có thể thao tác đồng thời trên dữ liệu của chúng.
+
+-      Thread2 :
+
+Ngay lập tức sau khi có 1 sinh viên được add vào collection validRollNumber.
+
+o   Thread2 lấy thông tin sinh viên vừa được add vào collection ra để hiển thị và có 1 dòng thông báo liền kề sau đó là độ dài hiện tại của collection validRollNumber.
+
+§  Ví dụ :
+
+·         "Welcome student has roll number is :…"
+
+·         “Valid collection has length :…”
+
+o   Đồng thời Thread2 ghi đối tượng sinh viên này xuống file xxx.dat
+
+§  Trong đó: xxx là roll number của sinh viên.
+
+·         Ví dụ: C1009H0001.dat hoặc T0812KV0002.dat
+
+
+-      Thread3:
+
+Ngay sau khi 1 roll number không hợp lệ được add vào collection unvalidRollNumber  .
+
+o   Thread3 lấy nó ra và hiển thị dưới dạng:
+
+§  "Unvalid roll number :…"
+
+o    Đồng thời ghi xuống file unvalid.txt , file unvalid.txt có nhiều dòng, mỗi dòng ghi một roll number không hợp lệ

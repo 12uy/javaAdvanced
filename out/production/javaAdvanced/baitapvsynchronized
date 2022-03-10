@@ -1,0 +1,9 @@
+Viét chwong trinh sau
+Thread1: Làm nhiệm vu sinh ngău nhiên các số tü 1-100
+Néu só ngău nhiên chia hêt cho 3 thi dây sang Thread 2: Thvc hiện in ra binh phuong só
+- Néu só ngău nhiên chia hết cho 2 thi đáy sang Thread 3: Thyc hiện kiém ra xem só đó có
+chia hêt cho 4 không và in ra thông báo (chia hét cho 4 hoặc ko)
+Néu tong các só sinh ngău nhiên trong Thread 1>= 200 thi dứng tát cà các thread.
+Thyc hien đông bộ 3 thread (Yêu càu: Thread1 sinh xong-> đoi cho 2 thread 2 và 3 thyc
+hiên xong mói sinh tiêp, Thread 2, 3 doi cho Thread 1 sinh sô ngáu nhiên mói thi mới thyc
+hiên yêu câu)
